@@ -12,12 +12,12 @@ func RunMigrations() {
 	m, err := migrate.New(cfg.DbMigrationPath, cfg.DbUrl)
 
 	if err != nil {
-		log.Fatalf("Błąd migracji: %v", err)
+		log.Fatalf("Error run migrate engine: %v", err)
 	}
 
 	if err := m.Up(); err != nil {
-		log.Fatalf("Błąd migracji: %v", err)
+		log.Fatalf("Error in migration: %v", err)
 	}
 
-	log.Println("Migracje wykonane")
+	log.Println("Migrations completed")
 }
