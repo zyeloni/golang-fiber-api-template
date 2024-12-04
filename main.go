@@ -3,20 +3,21 @@ package main
 import (
 	"github.com/gofiber/fiber/v3"
 	"golang-fiber-api-template/config"
+	"golang-fiber-api-template/database"
 	"golang-fiber-api-template/routes"
 	"log"
 )
 
 func main() {
 	config.LoadConfig()
-	//err := database.Connect()
-	//
-	//if err != nil {
-	//	log.Fatal(err)
-	//	return
-	//}
+	err := database.Connect()
 
-	//database.RunMigrations()
+	if err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	database.RunMigrations()
 
 	app := fiber.New()
 	app.Use(config.LoadBasicAuthConfig())
@@ -24,7 +25,7 @@ func main() {
 	router := app.Group("/api")
 	routes.LoadRoutes(router)
 
-	err := app.Listen(":3000")
+	err = app.Listen(":3000")
 
 	if err != nil {
 		log.Fatal(err)
