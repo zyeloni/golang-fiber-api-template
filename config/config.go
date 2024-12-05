@@ -1,6 +1,6 @@
 package config
 
-import "golang-fiber-api-template/utils"
+import "golang-fiber-api-template/internal/utils"
 
 type Config struct {
 	DbUrl           string

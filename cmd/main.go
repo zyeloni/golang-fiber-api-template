@@ -3,8 +3,8 @@ package main
 import (
 	"github.com/gofiber/fiber/v3"
 	"golang-fiber-api-template/config"
-	"golang-fiber-api-template/database"
-	"golang-fiber-api-template/routes"
+	"golang-fiber-api-template/internal/database"
+	"golang-fiber-api-template/internal/routes"
 	"log"
 )
 

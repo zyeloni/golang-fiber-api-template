@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gofiber/fiber/v3"
-	"golang-fiber-api-template/handlers"
+	"golang-fiber-api-template/internal/handlers"
 )
 
 func LoadRoutes(router fiber.Router) {
